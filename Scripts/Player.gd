@@ -30,7 +30,7 @@ func _process(delta): #Denna uppdateras varje frame
 	if not is_on_floor():
 		fall.y -= gravity * delta
 		
-	if Input.is_action_just_pressed("jump"):
+	if is_on_floor() && Input.is_action_just_pressed("jump"):
 		fall.y = jump
 	
 	if Input.is_action_just_pressed("ui_cancel"): #Ifall man klickar esc så syns musen igen

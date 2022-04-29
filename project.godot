@@ -19,6 +19,10 @@ config/name="Mannen Offensive"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalSettings="*res://Scripts/GlobalSettings.gd"
+
 [input]
 
 move_forward={

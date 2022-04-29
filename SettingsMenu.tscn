@@ -1,0 +1,77 @@
+[gd_scene format=2]
+
+[node name="SettingsMenu" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_left = 0.0237503
+anchor_right = 0.0237488
+margin_left = -0.950012
+margin_top = 0.950012
+margin_right = 1023.05
+margin_bottom = 600.95
+color = Color( 0.505882, 0.505882, 0.505882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_left = 0.650024
+margin_top = 1.20001
+margin_right = 504.65
+margin_bottom = 61.2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Video" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Video"]
+margin_top = 39.0
+margin_right = 993.0
+margin_bottom = 515.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Video/MarginContainer"]
+margin_right = 993.0
+margin_bottom = 476.0
+
+[node name="Display mode" type="Label" parent="TabContainer/Video/MarginContainer/GridContainer"]
+margin_right = 96.0
+margin_bottom = 14.0
+text = "Display mode"
+percent_visible = -0.0909091
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/MarginContainer/GridContainer"]
+margin_top = 18.0
+margin_right = 96.0
+margin_bottom = 38.0
+text = "Windowed"
+
+[node name="Audio" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -87.0
+margin_bottom = -4.0
+
+[node name="Game settings" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -87.0
+margin_bottom = -4.0

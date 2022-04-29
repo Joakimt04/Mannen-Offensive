@@ -25,3 +25,61 @@ mesh = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="Head"]
 transform = Transform( 1, 0, 0, 0, 0.987688, -0.156434, 0, 0.156434, 0.987688, 0, 0.93614, -0.0466088 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera"]
+
+[node name="ColorRect" type="ColorRect" parent="Head/Camera/CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -30.0
+margin_top = -2.5
+margin_right = -9.99997
+margin_bottom = 2.5
+color = Color( 0.0745098, 0.929412, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Head/Camera/CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 10.0
+margin_top = -2.5
+margin_right = 30.0
+margin_bottom = 2.5
+color = Color( 0.0745098, 0.929412, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="Head/Camera/CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -2.49997
+margin_top = 10.0
+margin_right = 2.5
+margin_bottom = 30.0
+color = Color( 0.0745098, 0.929412, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="Head/Camera/CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -2.49997
+margin_top = -30.0
+margin_right = 2.5
+margin_bottom = -10.0
+color = Color( 0.0745098, 0.929412, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+
+[node name="SettingsMenu" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_left = 0.0237488
+anchor_right = 0.0237488
+margin_left = -0.950012
+margin_top = 0.950012
+margin_right = 1023.05
+margin_bottom = 600.95
+color = Color( 0.505882, 0.505882, 0.505882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_right = 1022.0
+margin_bottom = 600.0
+
+[node name="TabContainer" type="TabContainer" parent="Menu"]
+margin_right = 1022.0
+margin_bottom = 36.0
+script = SubResource( 1 )
+
+[node name="Video" type="VBoxContainer" parent="Menu/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Audio" type="VBoxContainer" parent="Menu/TabContainer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Game settings" type="VBoxContainer" parent="Menu/TabContainer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Controls" type="VBoxContainer" parent="Menu/TabContainer"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0

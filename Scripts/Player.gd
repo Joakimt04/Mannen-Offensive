@@ -1,5 +1,7 @@
 extends KinematicBody
 
+var damage = 10
+
 var speed = 7
 var acceleration = 20
 var gravity = 9.8
@@ -12,6 +14,9 @@ var velocity = Vector3()
 var fall = Vector3()
 
 onready var head = $Head
+onready var anim_player = $AnimationPlayer
+onready var camera = $Head/Camera
+onready var raycast = $Head/Camera/RayCast
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) 
@@ -22,6 +27,21 @@ func _input(event):
 		rotate_y(deg2rad(-event.relative.x * mouse_sensitivity)) #Tar det musen har rört på sig uppåt och multiplicerar med sensitivityn
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-90), deg2rad (90)) #Gör så att man inte kan kolla ett helt varv runt
+		
+func fire():
+	if Input.is_action_pressed("fire"):
+		if not anim_player.is_playing():
+			if raycast.is_colliding(): #Kollar om personen kollar på något
+				var target = raycast.get_collider()
+				if target.is_in_group("Enemy"): #Kollar om man kollar på en fiende
+					target.health -= damage
+		anim_player.play("AssaultFire")
+	else:
+		anim_player.stop()
+		
+func _physics_process(delta):
+
+	fire()
 		
 func _process(delta): #Denna uppdateras varje frame
 	

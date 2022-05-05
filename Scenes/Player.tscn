@@ -76,9 +76,6 @@ margin_top = -2.5
 margin_right = -9.99997
 margin_bottom = 2.5
 color = Color( 0.0745098, 0.929412, 0.12549, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect2" type="ColorRect" parent="Head/Camera/CanvasLayer"]
 anchor_left = 0.5

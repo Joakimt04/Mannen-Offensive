@@ -15,12 +15,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Mannen Offensive"
-run/main_scene="res://Scenes/World.tscn"
+run/main_scene="res://Scenes/other/World.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GlobalSettings="*res://Scripts/GlobalSettings.gd"
+Network="*res://Scripts/Networking/network.gd"
 
 [input]
 

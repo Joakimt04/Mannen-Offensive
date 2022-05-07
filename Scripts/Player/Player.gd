@@ -1,6 +1,7 @@
 extends KinematicBody
 
 var damage = 10
+var health = 100
 
 var speed = 7
 const ACCEL_DEFAULT = 7
@@ -30,10 +31,14 @@ onready var camera = $Head/Camera
 onready var raycast = $Head/Camera/RayCast
 onready var network_tick_rate = $NetworkTickRate
 onready var movementTween = $MovementTween
+onready var body = $MeshInstance
+onready var collision = $CollisionShape
+onready var foot = $Foot
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) 
-	
+	add_to_group("kontraterrorist")
+	add_to_group("terrorist")
 	#networking
 	camera.current = is_network_master()
 	
@@ -50,7 +55,7 @@ func fire():
 			if not anim_player.is_playing():
 				if raycast.is_colliding(): #Kollar om personen kollar på något
 					var target = raycast.get_collider()
-					if target.is_in_group("Enemy"): #Kollar om man kollar på en fiende
+					if target.is_in_group("terrorist"): #Kollar om man kollar på en fiende
 						target.health -= damage
 			anim_player.play("AssaultFire")
 		else:
@@ -66,9 +71,14 @@ func _process(delta):
 	else:
 		camera.set_as_toplevel(false)
 		camera.global_transform = head.global_transform
+		
+	if health <= 0:
+		body.visible = false
+		collision.disabled = true
+		foot.disabled = true
+		
 
 func _physics_process(delta):
-		
 	if is_network_master():
 		fire()
 		if Input.is_action_just_pressed("ui_cancel"):

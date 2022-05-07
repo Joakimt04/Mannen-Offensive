@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://ShotgunModel_WithTexture/Shotgun.obj" type="ArrayMesh" id=2]
 
 [sub_resource type="CapsuleMesh" id=6]
@@ -136,6 +136,12 @@ material/3 = null
 material/4 = null
 material/5 = null
 
+[node name="NetworkTickRate" type="Timer" parent="."]
+wait_time = 0.03
+autostart = true
+
+[node name="MovementTween" type="Tween" parent="."]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AssaultFire = SubResource( 4 )
 anims/RESET = SubResource( 5 )
@@ -144,3 +150,5 @@ anims/RESET = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
 enabled = true
 cast_to = Vector3( 0, -1.5, 0 )
+
+[connection signal="timeout" from="NetworkTickRate" to="." method="_on_NetworkTickRate_timeout"]

@@ -1,0 +1,19 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Button" type="Button" parent="."]
+margin_left = 342.0
+margin_top = 263.0
+margin_right = 408.0
+margin_bottom = 283.0
+text = "Terrorist"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 586.0
+margin_top = 264.0
+margin_right = 691.0
+margin_bottom = 284.0
+text = "Kontraterrorist"
